@@ -1,4 +1,4 @@
-package handons.example
+package handson.example
 
 import collection.mutable.{HashMap,TreeMap,LinkedHashMap}
 

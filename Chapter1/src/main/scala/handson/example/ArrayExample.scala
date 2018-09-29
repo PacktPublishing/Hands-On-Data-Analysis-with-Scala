@@ -1,4 +1,4 @@
-package handons.example
+package handson.example
 
 /**
   * Demonstrates some of Array's features

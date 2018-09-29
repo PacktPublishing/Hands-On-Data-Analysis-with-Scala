@@ -1,4 +1,4 @@
-package handons.example
+package handson.example
 
 import scala.collection.mutable.ArrayBuffer
 

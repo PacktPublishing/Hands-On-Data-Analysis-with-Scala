@@ -1,4 +1,4 @@
-Chapter 10: Working with Data at scale
+Chapter 10: Working with Data at Scale
 ======================================
 To build and run unit tests using SBT:
 

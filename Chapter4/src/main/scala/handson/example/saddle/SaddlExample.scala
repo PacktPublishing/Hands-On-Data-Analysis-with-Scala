@@ -22,7 +22,5 @@ object SaddlExample {
     // Get random sample of 2% of dataset
     val sample = frame.rfilter(_ => scala.util.Random.nextDouble() < 0.02)
     sample.print()
-
   }
-
 }

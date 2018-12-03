@@ -12,5 +12,6 @@ libraryDependencies ++= Seq(
   "org.apache.commons" % "commons-csv" % "1.6", // Apache Commons CSV Java Library
   "org.vegas-viz" %% "vegas" % "0.3.11", // Vegas Visualization Library
   "org.scala-saddle" %% "saddle-core" % "1.3.4", // Saddle Dataframe like Library
+  "org.apache.spark" %% "spark-sql" % "2.4.0", // Spark Core Library
   "org.scalatest" %% "scalatest" % "3.0.5" % "test" // Scala test library
 )

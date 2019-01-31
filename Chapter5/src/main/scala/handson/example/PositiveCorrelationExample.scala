@@ -16,16 +16,16 @@ object PositiveCorrelationExample {
 
     val data = spark.sparkContext.parallelize(
       Seq(
-        Vectors.dense(1.0, 1.0, 100.0),
-        Vectors.dense(2.0, 10.0, 200.0),
-        Vectors.dense(3.0, 100.0, 300.0),
-        Vectors.dense(4.0, 1000.0, 400.0),
-        Vectors.dense(5.0, 10000.0, 500.0),
-        Vectors.dense(6.0, 100000.0, 600.0),
-        Vectors.dense(7.0, 1000000.0, 700.0),
-        Vectors.dense(8.0, 10000000.0, 800.0),
-        Vectors.dense(9.0, 100000000.0, 900.0),
-        Vectors.dense(9.9, 1000000000.0, 1000.0)
+        Vectors.dense(0.0, 1.0, 100.0),
+        Vectors.dense(10.0, 10.0, 200.0),
+        Vectors.dense(20.0, 100.0, 300.0),
+        Vectors.dense(30.0, 1000.0, 400.0),
+        Vectors.dense(40.0, 10000.0, 500.0),
+        Vectors.dense(50.0, 100000.0, 600.0),
+        Vectors.dense(60.0, 1000000.0, 700.0),
+        Vectors.dense(70.0, 10000000.0, 800.0),
+        Vectors.dense(80.0, 100000000.0, 900.0),
+        Vectors.dense(90.0, 1000000000.0, 1000.0)
       )
     )
     val summary = Statistics.colStats(data) // Compute column summary statistics

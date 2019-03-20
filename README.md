@@ -10,6 +10,5 @@ Hands-On Data Analysis with Scala
 | Chapter 5   | Applying Statistics and Hypothesis Testing |
 | Chapter 6   | Intro to Spark for Distributed Data Analysis |
 | Chapter 7   | Traditional Machine Learning for Data Analysis |
-| Chapter 8   | Neural Networks and Deep Learning for Data Analysis |
-| Chapter 9   | Near Real Time Data Analysis using Streaming |
-| Chapter 10  | Working with Data at Scale |
+| Chapter 8   | Near Real Time Data Analysis using Streaming |
+| Chapter 9   | Working with Data at Scale |

@@ -1,4 +1,4 @@
-name := "HandsOnScala-Chapter9"
+name := "HandsOnScala-Chapter8"
 
 version := "0.1"
 
@@ -19,5 +19,4 @@ libraryDependencies ++= Seq(
   "org.vegas-viz" %% "vegas" % "0.3.11", // Vegas Visualization Library
   "org.scala-saddle" %% "saddle-core" % "1.3.4", // Saddle Dataframe like Library
   "org.scalatest" %% "scalatest" % "3.0.5" % "test" // Scala test library
-  
 )

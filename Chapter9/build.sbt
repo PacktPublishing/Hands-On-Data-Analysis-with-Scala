@@ -2,7 +2,7 @@ name := "HandsOnScala-Chapter9"
 
 version := "0.1"
 
-val sparkVersion = "2.4.1"
+val sparkVersion = "2.4.0"
 
 // We will use Scala 2.11.x because many of Scala libraries such as
 // Spark, vegas-viz are not yet supported for Scala 2.12.x

@@ -32,6 +32,7 @@ object HandsOnSparkMedian {
 
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder().master("local").getOrCreate()
+    spark.sparkContext.setLogLevel("WARN")
     import spark.implicits._
 
     // Step 1: Generate 1,000,000 random numbers in range [0, 20) 1000 partitions

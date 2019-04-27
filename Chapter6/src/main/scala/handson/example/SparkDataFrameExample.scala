@@ -22,16 +22,18 @@ object SparkDataFrameExample {
       (17, "seventeen")
     )).toDF("num", "description")
 
+    // 1a. Print schema
+    df.printSchema()
+
     // 2. Get DataFrame size
     val count = df.count()
     println(count)
 
-    // 3. Compute total by using the reduce method of DataFrame
+    // 3. Compute total by using the selectExpr method of DataFrame
     val total = df.selectExpr("sum(num) total").collect()(0)(0).asInstanceOf[Long]
     println(total)
 
-
-    // 5. Use collect to bring DataFrame data to driver
+    // 4. Use collect to bring DataFrame data to driver
     val dfData = df.collect()
     dfData.foreach(println)
 

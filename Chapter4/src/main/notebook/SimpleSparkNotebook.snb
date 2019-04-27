@@ -1,0 +1,99 @@
+{
+  "metadata" : {
+    "id" : "beda5f6f-134f-4f4c-a00a-8b55e54f056c",
+    "name" : "SimpleSparkNotebook",
+    "user_save_timestamp" : "1969-12-31T16:00:00.000Z",
+    "auto_save_timestamp" : "1969-12-31T16:00:00.000Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "sparkNotebook" : null,
+    "customLocalRepo" : null,
+    "customRepos" : null,
+    "customDeps" : null,
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : null,
+    "customVars" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "C1E0496C916746308C0F54DBB8827212"
+    },
+    "cell_type" : "markdown",
+    "source" : "# Simple Spark Notebook"
+  }, {
+    "metadata" : {
+      "id" : "A4C0D679BEE74B6C832E2E610F58959C"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Define a Scala Case Class called Person"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "7573E5341587414498CF4E79038D4D0B"
+    },
+    "cell_type" : "code",
+    "source" : "case class Person(name: String, age: Int)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "defined class Person\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 3,
+      "time" : "Took: 1.152s, at 2019-04-27 15:57"
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "0C813B9BD36A408B800A081C32F8959E"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Create a Bar Plot of Persons"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "197EC319AA74409F80F9416DDCBAD5A3"
+    },
+    "cell_type" : "code",
+    "source" : "\nCustomPlotlyChart(\n  Seq(Person(\"James Bond\", 50), Person(\"Jon Doe\", 25), Person(\"Mickey Mouse\", 18), Person(\"Foo\", 33)),\n      dataOptions=\"{type: 'bar'}\",\n      dataSources=\"{x: 'name', y: 'age'}\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res5: notebook.front.widgets.charts.CustomPlotlyChart[Seq[Person]] = <CustomPlotlyChart widget>\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "<div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anonedfa5f0944965561e53ecc04bf69568e&quot;,&quot;dataInit&quot;:[{&quot;name&quot;:&quot;James Bond&quot;,&quot;age&quot;:50},{&quot;name&quot;:&quot;Jon Doe&quot;,&quot;age&quot;:25},{&quot;name&quot;:&quot;Mickey Mouse&quot;,&quot;age&quot;:18},{&quot;name&quot;:&quot;Foo&quot;,&quot;age&quot;:33}],&quot;genId&quot;:&quot;2070398756&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/customPlotlyChart'], \n      function(playground, _magiccustomPlotlyChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magiccustomPlotlyChart,\n    \"o\": {\"js\":\"var layout = {}; var dataSources={x: 'name', y: 'age'}; var dataOptions = {type: 'bar'}; var extraOptions = {}\",\"headers\":[\"name\",\"age\"],\"height\":400}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon313261dcded0a313f36021463c42a4db&quot;,&quot;initialValue&quot;:&quot;4&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon5365436e902f804bd2f48c5fb4c14a20&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 4,
+      "time" : "Took: 2.342s, at 2019-04-27 14:26"
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "94D44BE7D39444A88F4F781FE6678FA3"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  } ],
+  "nbformat" : 4
+}

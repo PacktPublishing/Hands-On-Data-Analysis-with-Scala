@@ -2,6 +2,9 @@ package handson.example
 
 case class PrimeNumber(num: Int, description: String)
 
+/**
+  * Spark Dataset Example
+  */
 object SparkDatasetExample {
   def main(args: Array[String]): Unit = {
     // 0a. Set Spark session

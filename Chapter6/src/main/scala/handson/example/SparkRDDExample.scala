@@ -1,5 +1,8 @@
 package handson.example
 
+/**
+  * Spark RDD Example
+  */
 object SparkRDDExample {
 
   def main(args: Array[String]): Unit = {

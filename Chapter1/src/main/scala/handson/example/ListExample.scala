@@ -6,7 +6,7 @@ import annotation.tailrec
   * Demonstrates some of List's features
   */
 object ListExample {
-  @tailrec def minAgePerson(acc: Option[Person], lst: List[Person]): Option[Person] = {
+  @tailrec def minAgePerson(acc: Option[common.Person], lst: List[common.Person]): Option[common.Person] = {
     if (lst.isEmpty) acc
     else if (acc.isEmpty) minAgePerson(Some(lst.head), lst.tail)
     else if (acc.get.age <= lst.head.age) minAgePerson(acc, lst.tail)
@@ -14,7 +14,7 @@ object ListExample {
   }
 
   def main(args: Array[String]) = {
-    val persons = List(Person("Jon", "Doe", 21), Person("Alice", "Smith", 20), Person("Bob", "Crew", 27)) // construct a List of Person objects
+    val persons = List(common.Person("Jon", "Doe", 21), common.Person("Alice", "Smith", 20), common.Person("Bob", "Crew", 27)) // construct a List of Person objects
     println(persons)
     println
 
@@ -42,7 +42,7 @@ object ListExample {
     println(below25)
     println(above25)
 
-    val updatePersons = persons.updated(0, Person("Jon", "Doe", 20)) // update first element
+    val updatePersons = persons.updated(0, common.Person("Jon", "Doe", 20)) // update first element
     println(updatePersons)
 
     val youngest = minAgePerson(None, persons) // Person with minimum age

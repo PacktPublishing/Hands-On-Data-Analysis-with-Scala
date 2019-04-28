@@ -1,4 +1,4 @@
-package handson.example
+package handson.example.common
 
 /**
   * Person case class that would be used as an example in this chapter

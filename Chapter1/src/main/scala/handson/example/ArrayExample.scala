@@ -5,7 +5,7 @@ package handson.example
   */
 object ArrayExample {
   def main(args: Array[String]) = {
-    val persons = Array(Person("Jon", "Doe", 21), Person("Alice", "Smith", 20), Person("Bob", "Crew", 27)) // construct a Array of Person objects
+    val persons = Array(common.Person("Jon", "Doe", 21), common.Person("Alice", "Smith", 20), common.Person("Bob", "Crew", 27)) // construct a Array of Person objects
     persons.foreach(println)
     println
 
@@ -35,7 +35,7 @@ object ArrayExample {
     above25.foreach(println)
     println
 
-    val updatePersons = persons.updated(0, Person("Jon", "Doe", 20)) // update first element
+    val updatePersons = persons.updated(0, common.Person("Jon", "Doe", 20)) // update first element
     updatePersons.foreach(println)
     println
   }

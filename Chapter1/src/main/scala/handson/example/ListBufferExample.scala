@@ -7,13 +7,13 @@ import scala.collection.mutable.ListBuffer
   */
 object ListBufferExample {
   def main(args: Array[String]) = {
-    val personsBuf = ListBuffer[Person]() // create ListBuffer of Person
+    val personsBuf = ListBuffer[common.Person]() // create ListBuffer of Person
 
-    personsBuf.append(Person("Jon", "Doe", 21)) // append a Person object at end
+    personsBuf.append(common.Person("Jon", "Doe", 21)) // append a Person object at end
 
-    personsBuf.prepend(Person("Alice", "Smith", 20)) // prepend a Person object at head
+    personsBuf.prepend(common.Person("Alice", "Smith", 20)) // prepend a Person object at head
 
-    personsBuf.insert(1, Person("Bob", "Crew", 27)) // insert a Person object at index 1
+    personsBuf.insert(1, common.Person("Bob", "Crew", 27)) // insert a Person object at index 1
 
     val persons = personsBuf.toList // materialize into a List of Person
     println(persons)

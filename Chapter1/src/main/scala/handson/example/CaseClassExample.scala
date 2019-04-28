@@ -1,11 +1,13 @@
 package handson.example
 
-// Case class example
-case class Person(fname: String, lname: String, age: Int)
+import handson.example.common.Person
 
+/**
+  * Case class example
+  */
 object CaseClassExample {
 
-  def isJon(p: Person) = {
+  def isJon(p: common.Person) = {
     p match {
       case Person("Jon", _, _) => {
         println("I am Jon"); true

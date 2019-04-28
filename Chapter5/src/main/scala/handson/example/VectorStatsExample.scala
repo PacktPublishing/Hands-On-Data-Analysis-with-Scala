@@ -1,5 +1,8 @@
 package handson.example
 
+/**
+  * Vector Level Stats Example
+  */
 object VectorStatsExample {
   def main(args: Array[String]): Unit = {
     // 0a. Set Spark session

@@ -2,6 +2,9 @@ package handson.example
 
 import org.apache.spark.sql.SparkSession
 
+/**
+  * Spark based median example
+  */
 object HandsOnSparkMedian {
 
   def getMedian(counts: Array[Tuple2[Int, Int]]): Double = {

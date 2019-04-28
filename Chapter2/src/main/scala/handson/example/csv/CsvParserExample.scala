@@ -7,10 +7,22 @@ import org.apache.commons.csv.{CSVFormat, CSVPrinter, CSVRecord}
 
 import scala.collection.mutable.ListBuffer
 
-//Zip Code	Total Population	Median Age	Total Males	Total Females	Total Households	Average Household Size
+/**
+  * Census Data
+  * @param zipCode
+  * @param totalPopulation
+  * @param medianAge
+  * @param totalMales
+  * @param totalFemales
+  * @param totalHouseholds
+  * @param averageHouseholdSize
+  */
 case class CensusData(zipCode: String, totalPopulation: Int, medianAge: Double,
                       totalMales: Int, totalFemales: Int, totalHouseholds: Int, averageHouseholdSize: Double)
 
+/**
+  * Data Consumer that can consume a CSV record, transform and save as Census Data
+  */
 class DataConsumer extends Consumer[CSVRecord] {
   val buf = ListBuffer[CensusData]()
   override def accept(t: CSVRecord): Unit = {
@@ -19,6 +31,9 @@ class DataConsumer extends Consumer[CSVRecord] {
   }
 }
 
+/**
+  * CSV Parser Example
+  */
 object CsvParserExample {
   def main(args: Array[String]): Unit = {
     val reader = new BufferedReader(

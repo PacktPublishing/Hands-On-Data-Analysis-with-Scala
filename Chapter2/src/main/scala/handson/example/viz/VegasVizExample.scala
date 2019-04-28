@@ -2,6 +2,9 @@ package handson.example.viz
 
 import vegas._
 
+/**
+  * Vegas Viz Example
+  */
 object VegasVizExample {
   def main(args: Array[String]): Unit = {
     val plot = Vegas("Currency Exchange Rates").

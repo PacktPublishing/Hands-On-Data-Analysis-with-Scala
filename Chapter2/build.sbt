@@ -9,6 +9,7 @@ scalaVersion := "2.11.12"
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-xml" % "1.1.1", // Scala XML library
   "org.apache.commons" % "commons-csv" % "1.6", // Apache Commons CSV Java Library
+  "org.json4s" %% "json4s-native" % "3.6.1", // Scala Lift JSON Library
   "org.vegas-viz" %% "vegas" % "0.3.11", // Vegas Visualization Library
   "org.scala-saddle" %% "saddle-core" % "1.3.4", // Saddle Dataframe like Library
   "org.scalatest" %% "scalatest" % "3.0.5" % "test" // Scala test library

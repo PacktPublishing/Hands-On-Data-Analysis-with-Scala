@@ -2,6 +2,9 @@ package handson.example
 
 import org.apache.spark.sql.SparkSession
 
+/**
+  * K-means clustering example
+  */
 object KMeansExample {
   val homeDir = System.getProperty("user.home")
 

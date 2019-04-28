@@ -2,6 +2,9 @@ package handson.example
 
 import org.apache.spark.sql.SparkSession
 
+/**
+  * Linear regression example
+  */
 object LinearRegExample {
   val homeDir = System.getProperty("user.home")
   def main(args: Array[String]): Unit = {

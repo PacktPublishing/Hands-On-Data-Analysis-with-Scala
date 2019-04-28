@@ -46,7 +46,7 @@ object LinearRegExample {
     // 9. Load the saved model
     val sameModel = LinearRegressionModel.load(spark.sparkContext, s"{homeDir}/LinearRegressionWithSGDModel")
     // 10. Output the model
-    sameModel
+    println(sameModel)
   }
 
 }

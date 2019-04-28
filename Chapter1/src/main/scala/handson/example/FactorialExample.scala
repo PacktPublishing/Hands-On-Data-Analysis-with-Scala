@@ -3,7 +3,7 @@ package handson.example
 import annotation.tailrec
 
 /**
-  * Factorial example using classiv vs tailrec optimizations
+  * Factorial example using classic vs tailrec optimizations
   */
 object FactorialExample {
   def classicFactorial(n: Int): Int = {

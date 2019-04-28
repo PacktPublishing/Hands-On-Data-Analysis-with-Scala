@@ -1,3 +1,7 @@
+/**
+  * Scala Worksheet for Case Class Example: run and explore in IntelliJ
+  */
+
 case class Person(fname: String, lname: String, age: Int)
 def isJon(p: Person) = {
   p match {

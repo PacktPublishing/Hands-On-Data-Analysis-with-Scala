@@ -53,15 +53,37 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 3,
-      "time" : "Took: 1.152s, at 2019-04-27 15:57"
+      "execution_count" : 1,
+      "time" : "Took: 1.296s, at 2019-04-27 20:11"
     } ]
   }, {
     "metadata" : {
       "id" : "0C813B9BD36A408B800A081C32F8959E"
     },
     "cell_type" : "markdown",
-    "source" : "## Create a Bar Plot of Persons"
+    "source" : "## Create a Bar Plot of Persons using Scala Sequence"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "E127A75633B143D680F9EE0F25C298C5"
+    },
+    "cell_type" : "code",
+    "source" : "val persons = Seq(Person(\"James Bond\", 50), Person(\"Jon Doe\", 25), Person(\"Mickey Mouse\", 18), Person(\"Foo\", 33))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "persons: Seq[Person] = List(Person(James Bond,50), Person(Jon Doe,25), Person(Mickey Mouse,18), Person(Foo,33))\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 2,
+      "time" : "Took: 1.191s, at 2019-04-27 20:11"
+    } ]
   }, {
     "metadata" : {
       "trusted" : true,
@@ -70,19 +92,19 @@
       "id" : "197EC319AA74409F80F9416DDCBAD5A3"
     },
     "cell_type" : "code",
-    "source" : "\nCustomPlotlyChart(\n  Seq(Person(\"James Bond\", 50), Person(\"Jon Doe\", 25), Person(\"Mickey Mouse\", 18), Person(\"Foo\", 33)),\n      dataOptions=\"{type: 'bar'}\",\n      dataSources=\"{x: 'name', y: 'age'}\")",
+    "source" : "\nCustomPlotlyChart(persons, dataOptions=\"{type: 'bar'}\", dataSources=\"{x: 'name', y: 'age'}\")",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "res5: notebook.front.widgets.charts.CustomPlotlyChart[Seq[Person]] = <CustomPlotlyChart widget>\n"
+      "text" : "res3: notebook.front.widgets.charts.CustomPlotlyChart[Seq[Person]] = <CustomPlotlyChart widget>\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anonedfa5f0944965561e53ecc04bf69568e&quot;,&quot;dataInit&quot;:[{&quot;name&quot;:&quot;James Bond&quot;,&quot;age&quot;:50},{&quot;name&quot;:&quot;Jon Doe&quot;,&quot;age&quot;:25},{&quot;name&quot;:&quot;Mickey Mouse&quot;,&quot;age&quot;:18},{&quot;name&quot;:&quot;Foo&quot;,&quot;age&quot;:33}],&quot;genId&quot;:&quot;2070398756&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/customPlotlyChart'], \n      function(playground, _magiccustomPlotlyChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magiccustomPlotlyChart,\n    \"o\": {\"js\":\"var layout = {}; var dataSources={x: 'name', y: 'age'}; var dataOptions = {type: 'bar'}; var extraOptions = {}\",\"headers\":[\"name\",\"age\"],\"height\":400}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon313261dcded0a313f36021463c42a4db&quot;,&quot;initialValue&quot;:&quot;4&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon5365436e902f804bd2f48c5fb4c14a20&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>"
+        "text/html" : "<div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anonebf6ad53a5163943f424f10007499712&quot;,&quot;dataInit&quot;:[{&quot;name&quot;:&quot;James Bond&quot;,&quot;age&quot;:50},{&quot;name&quot;:&quot;Jon Doe&quot;,&quot;age&quot;:25},{&quot;name&quot;:&quot;Mickey Mouse&quot;,&quot;age&quot;:18},{&quot;name&quot;:&quot;Foo&quot;,&quot;age&quot;:33}],&quot;genId&quot;:&quot;999979417&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/customPlotlyChart'], \n      function(playground, _magiccustomPlotlyChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magiccustomPlotlyChart,\n    \"o\": {\"js\":\"var layout = {}; var dataSources={x: 'name', y: 'age'}; var dataOptions = {type: 'bar'}; var extraOptions = {}\",\"headers\":[\"name\",\"age\"],\"height\":400}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon1feed2b226471e2c21474386a5332d2b&quot;,&quot;initialValue&quot;:&quot;4&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon631e37496a1246b3ef1d7e16244eb993&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 4,
-      "time" : "Took: 2.342s, at 2019-04-27 14:26"
+      "execution_count" : 3,
+      "time" : "Took: 1.663s, at 2019-04-27 20:11"
     } ]
   }, {
     "metadata" : {
@@ -91,9 +113,52 @@
       "collapsed" : true,
       "id" : "94D44BE7D39444A88F4F781FE6678FA3"
     },
+    "cell_type" : "markdown",
+    "source" : "## Spark DataFrame to Create Bar Chart"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "78FB42C27C2F4869817A625B595523A6"
+    },
     "cell_type" : "code",
-    "source" : "",
-    "outputs" : [ ]
+    "source" : "val personsDF = persons.toDF\n",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "personsDF: org.apache.spark.sql.DataFrame = [name: string, age: int]\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 4,
+      "time" : "Took: 4.092s, at 2019-04-27 20:11"
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "DC50293704DD445A95BB9133BE551683"
+    },
+    "cell_type" : "code",
+    "source" : "CustomPlotlyChart(personsDF, dataOptions=\"{type: 'bar'}\",dataSources=\"{x: 'name', y: 'age'}\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res6: notebook.front.widgets.charts.CustomPlotlyChart[org.apache.spark.sql.DataFrame] = <CustomPlotlyChart widget>\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "<div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon1198df60d9b2c3d576d1143452cffeab&quot;,&quot;dataInit&quot;:[{&quot;name&quot;:&quot;James Bond&quot;,&quot;age&quot;:50},{&quot;name&quot;:&quot;Jon Doe&quot;,&quot;age&quot;:25},{&quot;name&quot;:&quot;Mickey Mouse&quot;,&quot;age&quot;:18},{&quot;name&quot;:&quot;Foo&quot;,&quot;age&quot;:33}],&quot;genId&quot;:&quot;295852480&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/customPlotlyChart'], \n      function(playground, _magiccustomPlotlyChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magiccustomPlotlyChart,\n    \"o\": {\"js\":\"var layout = {}; var dataSources={x: 'name', y: 'age'}; var dataOptions = {type: 'bar'}; var extraOptions = {}\",\"headers\":[\"name\",\"age\"],\"height\":400}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon025ffbac6e1a997c16df661565dc187e&quot;,&quot;initialValue&quot;:&quot;4&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anond4cd3b717e9ec1b31d0c0ad76d138b98&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 5,
+      "time" : "Took: 2.379s, at 2019-04-27 20:11"
+    } ]
   } ],
   "nbformat" : 4
 }

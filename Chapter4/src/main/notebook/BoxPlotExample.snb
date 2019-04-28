@@ -1,0 +1,124 @@
+{
+  "metadata" : {
+    "id" : "838b5629-974a-43f8-afb1-8080240d4d86",
+    "name" : "BoxPlotExample",
+    "user_save_timestamp" : "1969-12-31T16:00:00.000Z",
+    "auto_save_timestamp" : "1969-12-31T16:00:00.000Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "sparkNotebook" : null,
+    "customLocalRepo" : null,
+    "customRepos" : null,
+    "customDeps" : null,
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : null,
+    "customVars" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "id" : "4D536A1BF0764CC29FC80AFF9D818711"
+    },
+    "cell_type" : "markdown",
+    "source" : "# Box Plot Example"
+  }, {
+    "metadata" : {
+      "id" : "751B66039D7F4D78AAC35E927BD59E5D"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Create three separate Spark DataFrame with 20 random numbers in range 0 to 100. Label each creation of DataFrame as a unique experiment"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "38A3AA1F37D1423F962F95F261F0EB03"
+    },
+    "cell_type" : "code",
+    "source" : "val df1 = sparkSession.range(20).map(n => (scala.util.Random.nextInt(100), \"Experiment 1\")).toDF(\"num\", \"experiment\")\nval df2 = sparkSession.range(20).map(n => (scala.util.Random.nextInt(100), \"Experiment 2\")).toDF(\"num\", \"experiment\")\nval df3 = sparkSession.range(20).map(n => (scala.util.Random.nextInt(100), \"Experiment 3\")).toDF(\"num\", \"experiment\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "df1: org.apache.spark.sql.DataFrame = [num: int, experiment: string]\ndf2: org.apache.spark.sql.DataFrame = [num: int, experiment: string]\ndf3: org.apache.spark.sql.DataFrame = [num: int, experiment: string]\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 1,
+      "time" : "Took: 3.491s, at 2019-04-27 20:22"
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "300B0298724046F28AE203A8AFF89D68"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Create a combined DataFrame by taking the union of all three DataFrames"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "2B062A4967064A41909BDF3F292CCC92"
+    },
+    "cell_type" : "code",
+    "source" : "val df = df1.union(df2).union(df3)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "df: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] = [num: int, experiment: string]\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 2,
+      "time" : "Took: 1.124s, at 2019-04-27 20:22"
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "4ADF0972D0664842AA18294A92885D12"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Use the box plot to display properties of each of the three experiments"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "E885BCF7058548958B7386AF4443D9BC"
+    },
+    "cell_type" : "code",
+    "source" : "CustomPlotlyChart(df, dataOptions=\"{type: 'box', splitBy: 'experiment'}\", dataSources=\"{y: 'num'}\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res3: notebook.front.widgets.charts.CustomPlotlyChart[org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]] = <CustomPlotlyChart widget>\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "<div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anonb3a5615dbeb089f930678ec9fee08db2&quot;,&quot;dataInit&quot;:[{&quot;num&quot;:25,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:17,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:21,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:76,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:21,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:65,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:48,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:87,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:78,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:52,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:21,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:51,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:37,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:5,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:86,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:41,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:65,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:46,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:75,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:15,&quot;experiment&quot;:&quot;Experiment 1&quot;},{&quot;num&quot;:76,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:46,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:5,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:76,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:54,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:57,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:99,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:4,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:88,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:85,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:12,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:98,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:91,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:86,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:27,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:42,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:36,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:61,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:84,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:46,&quot;experiment&quot;:&quot;Experiment 2&quot;},{&quot;num&quot;:86,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:98,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:92,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:23,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:17,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:24,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:48,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:54,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:98,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:68,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:48,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:27,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:5,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:2,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:47,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:62,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:69,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:11,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:74,&quot;experiment&quot;:&quot;Experiment 3&quot;},{&quot;num&quot;:67,&quot;experiment&quot;:&quot;Experiment 3&quot;}],&quot;genId&quot;:&quot;1474446148&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/customPlotlyChart'], \n      function(playground, _magiccustomPlotlyChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magiccustomPlotlyChart,\n    \"o\": {\"js\":\"var layout = {}; var dataSources={y: 'num'}; var dataOptions = {type: 'box', splitBy: 'experiment'}; var extraOptions = {}\",\"headers\":[\"num\",\"experiment\"],\"height\":400}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon28cd178e3ac2198b69b0de60ac191d65&quot;,&quot;initialValue&quot;:&quot;60&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anond30f348558941dc34103e1a0afa38e6b&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 3,
+      "time" : "Took: 3.965s, at 2019-04-27 20:22"
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "5E383DC595814C3783128807F5DEF9ED"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  } ],
+  "nbformat" : 4
+}

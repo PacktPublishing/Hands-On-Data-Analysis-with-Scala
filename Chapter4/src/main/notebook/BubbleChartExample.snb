@@ -1,0 +1,86 @@
+{
+  "metadata" : {
+    "id" : "1db793d3-b334-4d07-a230-4541318d9b5f",
+    "name" : "BubbleChartExample",
+    "user_save_timestamp" : "1969-12-31T16:00:00.000Z",
+    "auto_save_timestamp" : "1969-12-31T16:00:00.000Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "sparkNotebook" : null,
+    "customLocalRepo" : null,
+    "customRepos" : null,
+    "customDeps" : null,
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : null,
+    "customVars" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "id" : "B7DCEB6136024E018560CAA74E2618FF"
+    },
+    "cell_type" : "markdown",
+    "source" : "# Bubble Chart Example"
+  }, {
+    "metadata" : {
+      "id" : "3A8337AB75754C56AA7A53EBA6A44AD9"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Create a Spark DataFrame consisting of three records with different impacts"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "26E856B89AED42E8AC68BE977836DF49"
+    },
+    "cell_type" : "code",
+    "source" : "val df = Seq((1, 10, 30, \"blue\"), (2, 11, 60, \"green\"), (3, 12, 90, \"red\")).toDF(\"x\", \"y\", \"impact\", \"color\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "df: org.apache.spark.sql.DataFrame = [x: int, y: int ... 2 more fields]\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 1,
+      "time" : "Took: 3.515s, at 2019-04-27 20:33"
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "9DEBC24FAA7B4F248F1E3F9C2A21D663"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Create a bubble chart"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "12E1E35CCE894933B63F89087734A5E1"
+    },
+    "cell_type" : "code",
+    "source" : "CustomPlotlyChart(df, layout=\"{title: 'Impact', showlegend: false, height: 600, width: 600}\",\n                  dataOptions=\"{mode: 'markers'}\",\n                  dataSources=\"{x: 'x', y: 'y', marker: {size: 'impact', color: 'color'}}\")\n",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res2: notebook.front.widgets.charts.CustomPlotlyChart[org.apache.spark.sql.DataFrame] = <CustomPlotlyChart widget>\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "<div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anonbbb2a291172e20c5c9aee61d0ee6f4bd&quot;,&quot;dataInit&quot;:[{&quot;x&quot;:1,&quot;y&quot;:10,&quot;impact&quot;:30,&quot;color&quot;:&quot;blue&quot;},{&quot;x&quot;:2,&quot;y&quot;:11,&quot;impact&quot;:60,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:3,&quot;y&quot;:12,&quot;impact&quot;:90,&quot;color&quot;:&quot;red&quot;}],&quot;genId&quot;:&quot;99973500&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/customPlotlyChart'], \n      function(playground, _magiccustomPlotlyChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magiccustomPlotlyChart,\n    \"o\": {\"js\":\"var layout = {title: 'Impact', showlegend: false, height: 600, width: 600}; var dataSources={x: 'x', y: 'y', marker: {size: 'impact', color: 'color'}}; var dataOptions = {mode: 'markers'}; var extraOptions = {}\",\"headers\":[\"x\",\"y\",\"impact\",\"color\"],\"height\":400}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon232faeb1f5e99b6edb174a6d80fc02e6&quot;,&quot;initialValue&quot;:&quot;3&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anoncff458126b93c19913750f31bc0d7388&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 2,
+      "time" : "Took: 2.336s, at 2019-04-27 20:34"
+    } ]
+  } ],
+  "nbformat" : 4
+}

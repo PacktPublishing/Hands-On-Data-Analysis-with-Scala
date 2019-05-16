@@ -50,8 +50,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 
 
 ## Get to Know the Author
-**Rajesh Gupta**
-, is a hands-on big data tech lead and enterprise architect with extensive experience in the full life cycle of enterprise grade software development. He has successfully architected, developed, and deployed highly scalable data solutions using Spark, Scala, and the Hadoop technology stack for several US-based enterprises. A passionate, hands-on technologist, Rajesh has master's degrees in mathematics and computer science from BITS, Pilani (India).
+**Rajesh Gupta** is a hands-on big data tech lead and enterprise architect with extensive experience in the full life cycle of enterprise grade software development. He has successfully architected, developed, and deployed highly scalable data solutions using Spark, Scala, and the Hadoop technology stack for several US-based enterprises. A passionate, hands-on technologist, Rajesh has master's degrees in mathematics and computer science from BITS, Pilani (India).
 
 
 

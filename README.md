@@ -1,3 +1,8 @@
+## $5 Tech Unlocked 2021!
+[Buy and download this Book for only $5 on PacktPub.com](https://www.packtpub.com/product/hands-on-data-analysis-with-scala/9781789346114)
+-----
+*If you have read this book, please leave a review on [Amazon.com](https://www.amazon.com/gp/product/1789346118).     Potential readers can then use your unbiased opinion to help them make purchase decisions. Thank you. The $5 campaign         runs from __December 15th 2020__ to __January 13th 2021.__*
+
 # Hands-On Data Analysis with Scala 
 
 <a href="https://prod.packtpub.com/in/big-data-and-business-intelligence/hands-data-analysis-scala?utm_source=github&utm_medium=repository&utm_campaign="><img src="https://prod.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/b/1/b10917_mockupcover.png" alt="Hands-On Data Analysis with Scala " height="256px" align="right"></a>
